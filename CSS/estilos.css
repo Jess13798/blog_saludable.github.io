@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #e074a1a2;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #ec99bc;
+    box-shadow: 0 10px 25px -22px black;
+    z-index: 2;
+    font-family: 'Cashewcream', sans-serif;
+}
+
+.header-contenido{
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo, .logo, .menu { /* Actualizado 'logo' a 'titulo' */
+    flex: 1;
+}
+
+.logo img {
+    max-height: 80px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+.titulo{
+    height: 80px;
+    font-size: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo h1 b{
+    color: #000000;
+}
+
+.menu{
+    height: 80px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu nav{
+    height: 100%;
+}
+
+.menu ul{
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+.menu nav ul li{
+    height: 100%;
+    margin: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-selected:before{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #5e062b;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu nav ul li a{
+    color: #553e47;
+    font-size: 18px;
+    transition: color 300ms;
+}
+
+.menu nav ul li a:hover{
+    color: #851e49;
+}
+
+.menu .text-menu-selected{
+    color: #851e49;
+}
+
+.menu nav ul li a i{
+    display: none;
+}
+
+#icon-menu {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    position: relative;
+    right: 20px;
+    top: 16px;
+    padding: 10px;
+    color: #ffffff;
+    background: #ec99bc;
+    border-radius: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#icon-menu:hover{
+    opacity: 0.8;
+}
+
+/**PORTADA**/
+
+.container-cover{
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin-top: 80px;
+    background-image: url(../recursos/logo_main.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Cashewcream', sans-serif;
+}
+
+.container-cover:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 192, 203, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container-cover-info{
+    max-width: 800px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    font-family: 'Cashewcream', sans-serif;
+}
+
+.container-cover-info h1{
+    font-size: 60px;
+    font-weight: 500px;
+    color: #000000;
+}
+
+.container-cover-info p{
+    color: #000000;
+    font-size: 40px;
+    font-weight: 300px;
+}
+
+/*ARTICULO*/
+
+.container-content {
+    width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between; /* Asegura espacio entre los aside */
+    align-items: flex-start; /* Alinea al inicio verticalmente */
+    gap: 20px; /* Espaciado entre artículo y los aside */
+}
+
+
+
+article {
+    width: calc(100% - 340px); /* Ajusta el ancho para dejar espacio a los aside */
+    padding: 20px;
+    background: #ffc0ff;
+    border-radius: 6px;
+    box-shadow: -10px 0 20px -30px #000000;
+    overflow: hidden;
+    font-family: 'Times New Roman', serif;
+}
+
+article::before{
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #a153a1;
+}
+
+article h1{
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+article p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #000000;
+}
+
+article ul{
+    margin-top: 10px;
+    font-size: 20px;
+    padding-left: 30px;
+    color: #000000;
+}
+
+article ul li{
+    margin-bottom: 5px;
+}
+
+article img{
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    max-width: 600px; /* Limita el ancho máximo de la imagen */
+    height: 400px; /* Establece la altura fija de la imagen */
+    object-fit: cover; /* Hace que la imagen se ajuste a la caja manteniendo la proporción */
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #a153a1;
+    border-radius: 10px;
+}
+
+/*Aside de los articulos relacionado*/
+
+.container-aside {
+    display: flex;
+    flex-direction: column; /* Para apilar los aside uno sobre otro */
+    gap: 20px; /* Espaciado entre los aside */
+}
+
+.container-aside aside {
+    flex-shrink: 0; /* Evita que se encojan */
+    width: 320px;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 3px solid #a153a1;
+    background: #e074a1a2;
+}
+
+
+.container-aside aside img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.container-aside aside h2,
+
+.container-aside aside p{
+    margin-top: 20px;
+    padding: 0 20px;
+    font-family: 'Times New Roman', serif;
+}
+
+.container-aside aside button{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 50px;
+    font-size: 20px;
+    background: #ffc0ff;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: 'Times New Roman', serif;
+}
+
+.container-aside aside button:hover {
+    background-color: #851e49;
+    color: #ffffff;
+}
+
+/*Pie de pagina - footer*/
+
+.container-footer{
+    width: 100%;
+    padding: 40px 0;
+    background: #d64b858a;
+    margin-top: 40px;
+}
+
+.container-footer footer{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-footer footer .logo-footer{
+    text-align: center;
+}
+
+.container-footer footer .logo-footer img{
+    width: 100px;
+}
+
+.container-footer footer .redes-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-footer footer .redes-footer img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.container-footer footer h4{
+    text-align: center;
+    margin-top: 40px;
+    color: #000000;
+    font-weight: 500;
+}
+
+/*Responsibo - mobiles*/
+
+@media screen and (max-width: 1220px){
+    .header-contenido,
+    .container-content,
+    .container-footer footer{
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 1020px){
+    .container-content{
+        width: 100%;
+        flex-direction: column;
+    }
+    article{
+        box-shadow: 0 0 0 0;
+    }
+    .container-aside{
+        display: flex;
+        justify-content: center;
+    }
+    .container-aside aside{
+        max-width: 300px;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        overflow-x: hidden;
+    }
+    .container-all{
+        transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    }
+    .move-container-all{
+        transform: translateX(300px);
+    }
+    .menu{
+        width: 0px;
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        color: #ffffff;
+        overflow: hidden;
+        transform: translateX(-350px);
+        box-shadow: 10px 0 20px -25px black;
+        transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    }
+    .show-lateral{
+        width: 300px;
+        transform: translateX(0px);
+    }
+    .menu nav ul{
+        flex-direction: column;
+    }
+    .menu nav ul li{
+        max-width: 20px;
+        height: 50px;
+        justify-content: flex-start;
+    }
+    .menu-selected:before{
+        width: 0;
+    }
+    .menu nav ul li a{
+        margin-top: 40px;
+        color: #858585;
+    }
+    .menu nav ul li a i{
+        width: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        color: #000000;
+    }
+
+    #icon-mmenu{
+        display: block;
+    }
+
+    .container-aside{
+        flex-wrap: wrap;
+    }
+}
